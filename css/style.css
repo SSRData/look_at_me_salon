@@ -1,36 +1,46 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* =========================
+   VARIABLES
+========================= */
 :root {
   --gold: #c9a24d;
   --dark: #0b0b0b;
-  --glass: rgba(18, 18, 18, 0.75);
+  --glass: rgba(16, 16, 16, 0.78);
   --muted: #b8b8b8;
 }
 
+/* =========================
+   BODY
+========================= */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--dark);
   color: #fff;
+  line-height: 1.45;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero {
-  min-height: 100vh;
+  min-height: 85vh;
   background:
-  linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.9)),
-  url("../assets/images/hero.jpg");
-
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
+    url("../assets/images/hero.jpg") center / cover no-repeat;
 
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 24px;
+  padding: 20px;
 }
 
 .hero-content {
@@ -38,150 +48,225 @@ body {
 }
 
 .hero h1 {
-  font-size: 38px;
+  font-size: 34px;
   letter-spacing: 2px;
   color: var(--gold);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   INTRO
+========================= */
+#intro {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 14px 16px;
 }
 
 #intro h2 {
   font-size: 18px;
-  margin-bottom: 8px;
+  color: var(--gold);
+  margin-bottom: 6px;
 }
 
 #intro p {
-  font-size: 15px;
+  font-size: 14.5px;
   color: #ddd;
 }
 
-/* MAIN */
+/* =========================
+   MAIN
+========================= */
 main {
   max-width: 720px;
-  margin: -80px auto 0;
-  padding: 16px;
+  margin: -70px auto 0;
+  padding: 14px;
 }
 
-/* GLASS SECTIONS */
+/* =========================
+   SECTIONS (REDUCED HEIGHT)
+========================= */
 section {
   background: var(--glass);
   backdrop-filter: blur(10px);
   border-radius: 18px;
-  padding: 20px;
-  margin-bottom: 24px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
 }
 
-/* HEADINGS */
+/* =========================
+   HEADINGS
+========================= */
 h2 {
   color: var(--gold);
   text-align: center;
-  margin-bottom: 14px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 h3 {
-  margin: 20px 0 10px;
-  color: #fff;
+  font-size: 17px;
+  margin: 0;
 }
 
-/* BARBER */
+/* =========================
+   BARBER
+========================= */
 #barber {
   text-align: center;
 }
 
 #barber img {
-  width: 110px;
-  height: 110px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   border: 2px solid var(--gold);
-  margin: 12px 0;
+  margin: 10px 0;
 }
 
-/* MENU */
-.menu-category ul {
-  list-style: none;
-}
-
-.menu-category li {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 10px;
-  padding: 10px 0;
-  border-bottom: 1px dashed rgba(255,255,255,.15);
-  font-size: 15px;
-}
-
-.menu-category li:last-child {
-  border-bottom: none;
-}
-
-.menu-category li span {
-  color: var(--gold);
-  font-weight: 600;
-}
-
-/* QUICK ACTIONS */
-#quick-actions {
-  display: flex;
-  gap: 12px;
-  position: sticky;
-  bottom: 14px;
-}
-
-#quick-actions a {
-  flex: 1;
-  padding: 14px;
-  border-radius: 14px;
-  background: var(--gold);
-  color: #000;
-  text-align: center;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 16px;
-  color: var(--muted);
+#barber p {
   font-size: 14px;
-}
-
-.coming-soon p {
-  text-align: center;
-  color: #ccc;
-  font-style: italic;
-  margin-top: 8px;
+  color: #ddd;
 }
 
 /* =========================
-   ACCORDION MENU
+   MENU
 ========================= */
-
-.menu-items {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease;
+#menu {
+  padding-top: 6px;
 }
 
-.menu-category.active .menu-items {
-  max-height: 1000px; /* enough for content */
-}
-
+/* MENU CATEGORY HEADER */
 .menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 12px 0;
   cursor: pointer;
-  position: relative;
-  padding-right: 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
+/* PLUS / MINUS */
 .menu-toggle::after {
   content: "+";
-  position: absolute;
-  right: 0;
-  top: 0;
+  font-size: 22px;
   color: var(--gold);
-  font-size: 20px;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
 }
 
 .menu-category.active .menu-toggle::after {
   content: "–";
+}
+
+/* REMOVE EXTRA GAPS */
+.menu-category {
+  margin-bottom: 4px;
+}
+
+/* =========================
+   ACCORDION CONTENT
+========================= */
+.menu-items {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.menu-category.active .menu-items {
+  max-height: 1000px;
+}
+
+/* =========================
+   MENU ITEMS (PREMIUM LOOK)
+========================= */
+.menu-items li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 14.5px;
+  border-bottom: 1px dashed rgba(255,255,255,0.12);
+}
+
+/* SERVICE NAME */
+.menu-items li span:first-child {
+  color: #f0f0f0;
+  font-weight: 500;
+}
+
+/* PRICE */
+.menu-items li span:last-child {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 15.5px;
+}
+
+.menu-items li:last-child {
+  border-bottom: none;
+}
+
+/* =========================
+   COMING SOON
+========================= */
+.coming-soon p {
+  text-align: center;
+  font-style: italic;
+  color: #ccc;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* =========================
+   QUICK ACTIONS (FLOATING BAR)
+========================= */
+#quick-actions {
+  position: sticky;
+  bottom: 10px;
+  display: flex;
+  gap: 10px;
+  background: rgba(10,10,10,0.9);
+  padding: 10px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+#quick-actions a {
+  flex: 1;
+  padding: 12px 0;
+  border-radius: 12px;
+  background: var(--gold);
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 14px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* =========================
+   MOBILE IMAGE FIX
+========================= */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 70vh;
+    background-position: center top;
+    background-attachment: scroll;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
 }
