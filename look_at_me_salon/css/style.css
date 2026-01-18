@@ -1,0 +1,187 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #c9a24d;
+  --dark: #0b0b0b;
+  --glass: rgba(18, 18, 18, 0.75);
+  --muted: #b8b8b8;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--dark);
+  color: #fff;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background:
+  linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.9)),
+  url("../assets/images/hero.jpg");
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.hero-content {
+  max-width: 680px;
+}
+
+.hero h1 {
+  font-size: 38px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+#intro h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+#intro p {
+  font-size: 15px;
+  color: #ddd;
+}
+
+/* MAIN */
+main {
+  max-width: 720px;
+  margin: -80px auto 0;
+  padding: 16px;
+}
+
+/* GLASS SECTIONS */
+section {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+/* HEADINGS */
+h2 {
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+h3 {
+  margin: 20px 0 10px;
+  color: #fff;
+}
+
+/* BARBER */
+#barber {
+  text-align: center;
+}
+
+#barber img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  margin: 12px 0;
+}
+
+/* MENU */
+.menu-category ul {
+  list-style: none;
+}
+
+.menu-category li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(255,255,255,.15);
+  font-size: 15px;
+}
+
+.menu-category li:last-child {
+  border-bottom: none;
+}
+
+.menu-category li span {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* QUICK ACTIONS */
+#quick-actions {
+  display: flex;
+  gap: 12px;
+  position: sticky;
+  bottom: 14px;
+}
+
+#quick-actions a {
+  flex: 1;
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--gold);
+  color: #000;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.coming-soon p {
+  text-align: center;
+  color: #ccc;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* =========================
+   ACCORDION MENU
+========================= */
+
+.menu-items {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.menu-category.active .menu-items {
+  max-height: 1000px; /* enough for content */
+}
+
+.menu-toggle {
+  cursor: pointer;
+  position: relative;
+  padding-right: 24px;
+}
+
+.menu-toggle::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: var(--gold);
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.menu-category.active .menu-toggle::after {
+  content: "–";
+}
