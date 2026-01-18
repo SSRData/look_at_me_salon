@@ -33,7 +33,7 @@ body {
 .hero {
   min-height: 85vh;
   background:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.9)),
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.85)),
     url("../assets/images/hero.jpg") center / cover no-repeat;
 
   display: flex;
@@ -43,6 +43,7 @@ body {
   padding: 20px;
 }
 
+
 .hero-content {
   max-width: 680px;
 }
@@ -51,18 +52,21 @@ body {
   font-size: 34px;
   letter-spacing: 2px;
   color: var(--gold);
-  margin-bottom: 10px;
+  margin-bottom: 22px; /* MORE SPACE */
 }
+
 
 /* =========================
    INTRO
 ========================= */
 #intro {
-  background: var(--glass);
-  backdrop-filter: blur(10px);
+  background: rgba(16, 16, 16, 0.55); /* LESS BLACK */
+  backdrop-filter: blur(8px);
   border-radius: 16px;
-  padding: 14px 16px;
+  padding: 14px 18px;
+  margin-top: 22px; /* SPACE FROM TITLE */
 }
+
 
 #intro h2 {
   font-size: 18px;
@@ -223,15 +227,20 @@ h3 {
    QUICK ACTIONS (FLOATING BAR)
 ========================= */
 #quick-actions {
-  position: sticky;
-  bottom: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
   display: flex;
-  gap: 10px;
-  background: rgba(10,10,10,0.9);
-  padding: 10px;
-  border-radius: 16px;
+  gap: 8px;
+  padding: 10px 12px;
+
+  background: rgba(10,10,10,0.95);
   backdrop-filter: blur(10px);
-  z-index: 10;
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  z-index: 100;
 }
 
 #quick-actions a {
@@ -244,6 +253,12 @@ h3 {
   font-weight: 700;
   text-align: center;
   text-decoration: none;
+}
+
+/*test */
+
+body {
+  padding-bottom: 80px; /* space for fixed buttons */
 }
 
 /* =========================
@@ -270,3 +285,6 @@ footer {
     font-size: 30px;
   }
 }
+
+
+
