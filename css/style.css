@@ -78,7 +78,10 @@ body {
 #intro p {
   font-size: 14.5px;
   color: #ddd;
+  line-height: 1.5;  /* Can be removed */
 }
+
+
 
 /* =========================
    MAIN
@@ -134,6 +137,13 @@ h3 {
   font-size: 14px;
   color: #ddd;
 }
+
+#barber {
+  margin-top: 24px;
+}
+
+
+
 
 /* =========================
    MENU
@@ -305,4 +315,13 @@ footer {
   white-space: nowrap;
 }
 
+/* =========================
+   MOBILE Formatting
+========================= */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 55vh; /* was ~70–85vh */
+  }
+}
 
