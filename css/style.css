@@ -85,9 +85,7 @@ body {
    MAIN    next remove max width
 ========================= */
 main {
-  max-width: 720px;
   margin-top: 0;
-  padding: 14px;
 }
 
 
